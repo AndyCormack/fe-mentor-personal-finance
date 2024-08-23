@@ -1,6 +1,7 @@
 <script lang="ts">
   import { useQuery } from 'convex-svelte'
   import { api } from '../convex/_generated/api.js'
+  import { Checkbox } from '$lib/components/ui/checkbox/index.js'
 
   const query = useQuery(api.tasks.get, {})
 </script>
@@ -13,7 +14,7 @@
   <ul>
     {#each query.data as task}
       <li>
-        {task.isCompleted ? '☑' : '☐'}
+        <Checkbox bind:checked={task.isCompleted} />
         <span>{task.text}</span>
         <span>assigned by {task.assigner}</span>
       </li>

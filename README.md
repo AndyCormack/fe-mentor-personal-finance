@@ -1,3 +1,16 @@
+# Frontend Mentor - Coding Challenge - Personal Finance App
+
+https://www.frontendmentor.io/challenges/personal-finance-app-JfjtZgyMt1
+
+Using this project to learn Svelte 5 and Convex.
+
+Tech used:
+
+- Convex (https://convex.dev)
+- SvelteKit (https://kit.svelte.dev)
+- Tailwind CSS (https://tailwindcss.com)
+- shadcn-svelte (https://shadcn-svelte.com)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).

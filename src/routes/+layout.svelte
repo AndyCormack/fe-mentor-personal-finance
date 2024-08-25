@@ -14,7 +14,7 @@
 
 <div class="flex min-h-screen">
   <nav
-    class="flex w-64 flex-col justify-between bg-foreground p-4 text-background dark:bg-background dark:text-foreground"
+    class="flex w-64 flex-col justify-between border-r bg-foreground p-4 text-background dark:bg-background dark:text-foreground"
   >
     <div>
       <a href="/">Overview</a>

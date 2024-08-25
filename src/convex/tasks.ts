@@ -4,7 +4,7 @@ import { mutation, query } from './_generated/server'
 export const get = query({
   args: {},
   handler: async (ctx) => {
-    const tasks = await ctx.db.query('tasks').collect()
+    const tasks = await ctx.db.query('tasks').order('desc').collect()
     return tasks.map((task) => ({ ...task, assigner: 'Andy' }))
   },
 })

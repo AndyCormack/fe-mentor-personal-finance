@@ -1,6 +1,7 @@
 <script>
   import { PUBLIC_CONVEX_URL } from '$env/static/public'
   import '@/app.css'
+  import '@/fonts.css'
   import ThemeToggle from '@/lib/components/ThemeToggle.svelte'
   import { setupConvex } from 'convex-svelte'
   import { ModeWatcher } from 'mode-watcher'

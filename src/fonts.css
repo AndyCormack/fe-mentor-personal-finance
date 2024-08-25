@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  src: url('$lib/assets/fonts/PublicSans-VariableFont_wght.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  font-style: italic;
+  src: url('$lib/assets/fonts/PublicSans-Italic-VariableFont_wght.ttf')
+    format('truetype');
+}

@@ -23,7 +23,7 @@
         <Checkbox
           checked={task.isCompleted}
           onCheckedChange={(isChecked) =>
-            onCompletedChanged(task._id, isChecked)}
+            onCompletedChanged(task._id, isChecked as boolean)}
         />
         {task.isCompleted ? '✅' : '❌'}
         <span>{task.text}</span>

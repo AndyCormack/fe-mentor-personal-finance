@@ -16,7 +16,7 @@ export const updateCompleted = mutation({
   },
   handler: async (ctx, { id, isCompleted }) => {
     const task = await ctx.db.get(id)
-    await ctx.db.patch(id, { isCompleted: isCompleted ?? !task.isCompleted })
+    await ctx.db.patch(id, { isCompleted: isCompleted ?? !task?.isCompleted })
     return task
   },
 })

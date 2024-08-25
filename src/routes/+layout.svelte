@@ -16,8 +16,9 @@
   <nav
     class="flex w-64 flex-col justify-between border-r bg-foreground p-4 text-background dark:bg-background dark:text-foreground"
   >
-    <div>
-      <a href="/">Overview</a>
+    <div class="flex flex-col gap-2">
+      <a href="/">Home</a>
+      <a href="/dashboard">Overview</a>
     </div>
 
     <div class="text-foreground">

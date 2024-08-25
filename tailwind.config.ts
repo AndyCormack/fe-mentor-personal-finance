@@ -29,6 +29,10 @@ const config: Config = {
             h3: { fontWeight: '200' },
             h4: { fontWeight: '200' },
             h5: { fontWeight: '200' },
+
+            hr: {
+              borderColor: 'inherit',
+            },
           },
         },
       },

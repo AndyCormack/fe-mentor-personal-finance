@@ -44,35 +44,41 @@
       </div>
     </div>
   </div>
-<h1>Overview</h1>
 
-<div class="card">
-  <div class="card-body">
-    <h2>Transactions</h2>
+  <div class="card">
+    <div class="card-body">
+      <h2>Transactions</h2>
 
-    <ul>
-      {#if query.isLoading}
-        Loading...
-      {:else if query.error}
-        failed to load: {query.error.toString()}
-      {:else}
-        {#each query.data as transaction}
-          <li class="flex justify-between">
-            <div>
-              <p>{transaction.avatar}</p>
-              <p>{transaction.name}</p>
-            </div>
+      <ul class="not-prose">
+        {#if query.isLoading}
+          Loading...
+        {:else if query.error}
+          failed to load: {query.error.toString()}
+        {:else}
+          {#each query.data as transaction}
+            <li class="flex justify-between border-b p-4 last:border-b-0">
+              <div class="flex items-center gap-4">
+                <img
+                  src={transaction.avatar}
+                  alt={transaction.name}
+                  width="40"
+                  class="m-0 rounded-full"
+                />
+                <p class="font-bold">{transaction.name}</p>
+              </div>
 
-            <div class="text-end">
-              <p>{currency.format(transaction.amount)}</p>
-              <p class="text-muted-foreground">
-                {date.format(new Date(transaction.date))}
-              </p>
-            </div>
-          </li>
-        {/each}
-      {/if}
-    </ul>
+              <div class="text-end">
+                <p class="font-bold text-accent-foreground">
+                  {currency.format(transaction.amount)}
+                </p>
+                <p class="text-sm">
+                  {date.format(new Date(transaction.date))}
+                </p>
+              </div>
+            </li>
+          {/each}
+        {/if}
+      </ul>
     </div>
   </div>
 </div>

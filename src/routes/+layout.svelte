@@ -19,6 +19,7 @@
     <div class="flex flex-col gap-2">
       <a href="/">Home</a>
       <a href="/dashboard">Overview</a>
+      <a href="/dashboard/transactions">Transactions</a>
     </div>
 
     <div class="text-foreground">

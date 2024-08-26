@@ -17,34 +17,55 @@
   })
 </script>
 
-<h1>Transactions</h1>
-
 <div class="card">
-  <div class="card-body">
-    <h2>Transactions</h2>
+  <div class="card-body prose max-w-screen-lg dark:prose-invert">
+    <h1>Transactions</h1>
 
-    <ul>
-      {#if query.isLoading}
-        Loading...
-      {:else if query.error}
-        failed to load: {query.error.toString()}
-      {:else}
-        {#each query.data as transaction}
-          <li class="flex justify-between">
-            <div>
-              <p><img src={transaction.avatar} alt={transaction.name} /></p>
-              <p>{transaction.name}</p>
-            </div>
+    <table class="w-full">
+      <thead>
+        <tr>
+          <th class="text-start">Recipient / Sender</th>
+          <th class="text-start">Category</th>
+          <th class="text-start">Transaction Date</th>
+          <th class="text-end">Amount</th>
+        </tr>
+      </thead>
 
-            <div class="text-end">
-              <p>{currency.format(transaction.amount)}</p>
-              <p class="text-muted-foreground">
+      <tbody>
+        {#if query.isLoading}
+          <tr><td colspan="4">Loading...</td></tr>
+        {:else if query.error}
+          <tr><td colspan="4">Failed to load: {query.error.toString()}</td></tr>
+        {:else}
+          {#each query.data as transaction}
+            <tr>
+              <td class="align-middle">
+                <div class="flex items-center gap-4">
+                  <img
+                    src={transaction.avatar}
+                    alt={transaction.name}
+                    width="40"
+                    class="m-0 rounded-full"
+                  />
+                  {transaction.name}
+                </div>
+              </td>
+
+              <td class="align-middle">
+                {transaction.category}
+              </td>
+
+              <td class="align-middle">
                 {date.format(new Date(transaction.date))}
-              </p>
-            </div>
-          </li>
-        {/each}
-      {/if}
-    </ul>
+              </td>
+
+              <td class="text-end align-middle">
+                {currency.format(transaction.amount)}
+              </td>
+            </tr>
+          {/each}
+        {/if}
+      </tbody>
+    </table>
   </div>
 </div>

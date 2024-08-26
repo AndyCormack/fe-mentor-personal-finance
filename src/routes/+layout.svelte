@@ -12,7 +12,7 @@
 
 <ModeWatcher />
 
-<div class="flex min-h-screen">
+<div class="flex h-screen">
   <nav
     class="flex w-64 flex-col justify-between border-r bg-foreground p-4 text-background dark:bg-background dark:text-foreground"
   >
@@ -27,7 +27,7 @@
     </div>
   </nav>
 
-  <main class="flex-1 p-4">
+  <main class="flex-1 overflow-y-auto p-10">
     {@render children()}
   </main>
 </div>

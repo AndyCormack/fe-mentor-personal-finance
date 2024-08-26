@@ -3,6 +3,8 @@
   import type { Id } from '@/convex/_generated/dataModel'
   import { useQuery } from 'convex-svelte'
 
+  const { data } = $props()
+
   const query = useQuery(api.transactions.getRecent, {
     // TODO: use user from session
     user: 'jd76g1pn413xa9j0mgw83wczqn6zhdc3' as Id<'users'>,
@@ -17,6 +19,31 @@
   })
 </script>
 
+<div class="prose max-w-screen-lg dark:prose-invert">
+  <h1>Overview</h1>
+
+  <div class="not-prose flex gap-6">
+    <div class="flex-grow rounded-xl bg-primary p-6 text-primary-foreground">
+      <div class="card-body">
+        <h2 class="m-0 text-sm text-primary-foreground">Balance</h2>
+        <p class="m-0 text-2xl">{currency.format(data.balance)}</p>
+      </div>
+    </div>
+
+    <div class="card flex-grow rounded-xl bg-card p-6 text-card-foreground">
+      <div class="card-body">
+        <h2 class="text-sm">Income</h2>
+        <p class="text-2xl">{currency.format(data.income)}</p>
+      </div>
+    </div>
+
+    <div class="card flex-grow rounded-xl bg-card p-6 text-card-foreground">
+      <div class="card-body">
+        <h2 class="text-sm">Expenses</h2>
+        <p class="text-2xl">{currency.format(Math.abs(data.expenses))}</p>
+      </div>
+    </div>
+  </div>
 <h1>Overview</h1>
 
 <div class="card">
@@ -46,5 +73,6 @@
         {/each}
       {/if}
     </ul>
+    </div>
   </div>
 </div>

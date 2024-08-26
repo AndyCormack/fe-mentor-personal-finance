@@ -2,6 +2,6 @@
   {
     "name": "Andrew Cormack",
     "email": "incurse@gmail.com",
-    "avatar": "./assets/images/avatars/andrew-cormack.jpg"
+    "avatar": "/assets/images/avatars/andrew-cormack.jpg"
   }
 ]

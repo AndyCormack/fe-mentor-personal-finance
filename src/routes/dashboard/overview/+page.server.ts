@@ -2,10 +2,9 @@ import { PUBLIC_CONVEX_URL } from '$env/static/public'
 import { api } from '@/convex/_generated/api'
 import type { Id } from '@/convex/_generated/dataModel'
 import { ConvexHttpClient } from 'convex/browser'
-import type { PageServerLoad } from './$types'
 
-export const load = (async () => {
-  const client = new ConvexHttpClient(PUBLIC_CONVEX_URL!)
+export const load = async () => {
+  const client = new ConvexHttpClient(PUBLIC_CONVEX_URL)
   const { income, expenses } = await client.query(
     api.transactions.getIncomeExpenses,
     {
@@ -20,4 +19,4 @@ export const load = (async () => {
     // TODO: use real data once savings pots are implemented
     balance: 4836,
   }
-}) satisfies PageServerLoad
+}
